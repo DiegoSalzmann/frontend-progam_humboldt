@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Humboldt</title>
+</head>
+<body>
+    <div class="main-login">
+        <div class="card-login">
+            <h1>Selecione o Aluno</h1>
+            <div class="textfield">
+                <select id="select">
+                    <option value="" selected>-- selecione --</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Defina a URL do endpoint da sua API
+        const apiUrl = 'http://127.0.0.1:5000/listar';
+        
+        // Selecione o elemento 'select' pelo ID
+        const selectElement = document.getElementById('select');
+        
+        // Faça uma requisição GET para a API
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                // Itere sobre os dados retornados e crie uma opção para cada item
+                data.forEach(item => {
+                    if(item.nome != null) {
+                        const option = document.createElement('option');
+                        console.log(item.id);
+                        option.value = item.id; // Substitua por qualquer propriedade única do item
+                        option.textContent = item.nome; // Substitua pelo nome da pessoa
+                        selectElement.appendChild(option);
+                    }
+                });
+            })
+            .catch(error => console.error('Erro ao carregar os nomes:', error));
+    });
+
+    document.getElementById('select').onchange = function() {
+        var selectedValue = this.value;
+        window.location.href = 'lista_usuarios.html?id=' + selectedValue;
+    }
+
+</script>

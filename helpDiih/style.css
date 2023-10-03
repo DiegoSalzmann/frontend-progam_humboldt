@@ -1,0 +1,60 @@
+*{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+
+}
+
+.main-login{
+    width: 100vw;
+    height: 100%;
+    background-color: #036;
+    display: flex;
+    justify-content: center;
+}
+
+.card-login h1 {
+    margin-bottom: 10vh;
+    font-size: 3vw;
+    color: #036;
+    font-weight: 800;
+}
+
+
+.card-login{
+    margin-top: 10vh;
+    width: 70vw;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px black;
+}
+
+.textfield{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px;
+}
+
+.textfield > select{
+    width: 40vw;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: rgba(255,105,0,1);
+    color: white;
+    box-shadow: 0px 08px 10px rgba(0, 0, 0, 0.384);
+    outline: none;
+    box-sizing: border-box;
+}
+
